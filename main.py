@@ -37,5 +37,5 @@ def git_log(limit: int = 10):
             })
         
         return {"commits": commits, "count": len(commits)}
-    except Exception as e:
-        return {"error": str(e), "commits": [], "count": 0}
+    except Exception:
+        return {"error": "Failed to retrieve git log", "commits": [], "count": 0}
